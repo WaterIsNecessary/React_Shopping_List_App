@@ -1,16 +1,82 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-
+import AddForm from './components/AddForm'
+import ShoppingList from './components/ShoppingList'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [shoppingListItems, setShoppingListItems] = useState([])
+
+  const [errorMessage, setErrorMessage] = useState("")
+
+  function handleAddItem(itemName, itemQuantity) {
+
+    if (!itemName && !itemQuantity) {
+
+      setErrorMessage("Please enter a name for your item and a corresponding quantity.")
+      return
+
+    } else if (!itemName) {
+
+      setErrorMessage("Please enter a name for your item.")
+      return
+
+    } else if (!itemQuantity) {
+
+      setErrorMessage("Please enter a quantity for your item.")
+      return
+
+    }
+
+    setErrorMessage("")
+
+    const newShoppingListItem = {
+      id: crypto.randomUUID(),
+      name: itemName,
+      quantity: itemQuantity,
+      purchased: false
+    }
+
+    setShoppingListItems(prev => [...prev, newShoppingListItem])
+
+
+  }
+
+  function handleToggle(shoppingListItemId) {
+    setShoppingListItems(prev => 
+      prev.map(item =>
+        item.id === shoppingListItemId
+          ? { ...item, purchased: !item.purchased }
+          : item
+      )
+    )
+  }
+
+  function handleQuantityChange(shoppingListItemId, newQuantity) {
+    setShoppingListItems(prev => 
+      prev.map(item => 
+        item.id === shoppingListItemId
+          ? {...item, quantity: newQuantity}
+          : item
+      )
+    )
+  }
+
+
 
   return (
     <>
-      <header></header>
+      <header>
+        <h1><a href="#">The Shopping List App</a></h1>
+      </header>
       <main>
-        <p>Testing</p>
+        <AddForm 
+          onAddItem={handleAddItem}
+          errorMessage={errorMessage}
+        />
+        <ShoppingList 
+          shoppingListItems={shoppingListItems}
+          onToggle={handleToggle}
+          onQuantityChange={handleQuantityChange}
+        />
       </main>
       <footer></footer>
     </>

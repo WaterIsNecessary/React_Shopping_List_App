@@ -1,10 +1,12 @@
+// Basic CSS startup
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,10 +23,19 @@
   box-sizing: border-box;
 }
 
-body {
-  min-width: 320px;
-  min-height: 100vh;
+// Responsive text 
+
+html {
+font-size: calc(1em + 1vw);
 }
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.0rem; }
+p { font-size: 0.8rem; }
+
+// Some nice things to have
 
 img, picture, video, canvas, svg {
   display: block;
@@ -33,6 +44,41 @@ img, picture, video, canvas, svg {
 
 input, button, textarea, select {
   font: inherit;
+}
+
+// Ensure layout doesn't collapse on screens that are very small
+// Ensure viewing height = viewport height
+
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+// Styling starts from here:
+
+header{
+  min-height: 15vh;
+  border-bottom: solid black 3px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;    
+
+
+  h1 > a {
+    text-decoration: none;
+    color: black;
+  }
+
+  h1 > a:hover {
+    text-decoration: none;
+    color: blue;
+  }
+
+  h1 {
+    text-align: center;
+  }
 }
 
 

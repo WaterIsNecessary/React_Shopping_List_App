@@ -3,7 +3,22 @@ import AddForm from './components/AddForm'
 import ShoppingList from './components/ShoppingList'
 
 function App() {
-  const [shoppingListItems, setShoppingListItems] = useState([])
+  const startingList = [
+    {
+      id: crypto.randomUUID(),
+      name: "Banana",
+      quantity: 2,
+      purchased: false
+    },
+    {
+      id: crypto.randomUUID(),
+      name: "Apple",
+      quantity: 3,
+      purchased: true
+    }
+  ]
+
+  const [shoppingListItems, setShoppingListItems] = useState(startingList)
 
   const [errorMessage, setErrorMessage] = useState("")
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../style/addform.scss'
 
 function AddForm({onAddItem, errorMessage}) {
 
@@ -16,20 +17,20 @@ function AddForm({onAddItem, errorMessage}) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <fieldset>
-                <legend>Add Shopping List Item</legend>
+            <fieldset className="formFieldset">
+                
 
                 <label>
-                    Item name:
+                    Item
                     <input type="text" value={itemName} onChange={(e) => setItemName(e.target.value)}/>                    
                 </label>
 
                 <label>
-                    Quantity:
+                    Quantity
                     <input type="number" value={itemQuantity} onChange={(e) => setItemQuantity(e.target.valueAsNumber)} />
                 </label>
 
-                <button type="submit">Add Item to Shopping List</button>
+                <button type="submit">Add Item</button>
 
                 {errorMessage && <p>{errorMessage}</p>}
             </fieldset>

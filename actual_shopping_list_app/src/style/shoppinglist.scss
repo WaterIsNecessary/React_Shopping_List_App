@@ -1,0 +1,13 @@
+.listSection{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        
+    }
+}

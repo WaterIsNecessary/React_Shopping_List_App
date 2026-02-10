@@ -53,6 +53,7 @@ input, button, textarea, select {
 body {
   min-width: 320px;
   min-height: 100vh;
+  background-color: black;
 }
 
 // Styling starts from here:
@@ -61,14 +62,13 @@ header{
   min-height: 15vh;
   border-bottom: solid black 3px;
   display: flex;
-
   justify-content: center;
   align-items: center;    
 
 
   h1 > a {
     text-decoration: none;
-    color: black;
+    color: white;
   }
 
   h1 > a:hover {
@@ -79,6 +79,26 @@ header{
   h1 {
     text-align: center;
   }
+}
+
+main {
+
+  min-height: 70vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-content: center;  
+
+  section{
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+  }
+
+}
+
+footer{
+  min-height: 15vh;
 }
 
 

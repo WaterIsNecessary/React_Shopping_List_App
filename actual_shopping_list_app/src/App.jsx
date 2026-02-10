@@ -83,15 +83,21 @@ function App() {
         <h1><a href="#">The Shopping List App</a></h1>
       </header>
       <main>
-        <AddForm 
-          onAddItem={handleAddItem}
-          errorMessage={errorMessage}
-        />
-        <ShoppingList 
-          shoppingListItems={shoppingListItems}
-          onToggle={handleToggle}
-          onQuantityChange={handleQuantityChange}
-        />
+
+        <section>
+        
+          <AddForm 
+            onAddItem={handleAddItem}
+            errorMessage={errorMessage}
+          />
+          <ShoppingList 
+            shoppingListItems={shoppingListItems}
+            onToggle={handleToggle}
+            onQuantityChange={handleQuantityChange}
+          />
+
+        </section>
+        
       </main>
       <footer></footer>
     </>

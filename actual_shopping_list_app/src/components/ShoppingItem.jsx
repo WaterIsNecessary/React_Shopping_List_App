@@ -1,4 +1,4 @@
-
+import '../style/shoppingitem.scss'
 
 function ShoppingItem({item, onToggle, onQuantityChange}){
 

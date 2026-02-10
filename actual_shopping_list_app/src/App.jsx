@@ -26,7 +26,7 @@ function App() {
 
     if (!itemName && !itemQuantity) {
 
-      setErrorMessage("Please enter a name for your item and a corresponding quantity.")
+      setErrorMessage("Please enter a name and quantity.")
       return
 
     } else if (!itemName) {
